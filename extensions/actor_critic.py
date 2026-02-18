@@ -18,9 +18,12 @@ import torch
 import torch.nn.functional as F
 
 from rl_utils import (
-    make_env, PolicyNetwork, ValueNetwork, collect_rollouts, DEVICE,
+    make_env, PolicyNetwork, ValueNetwork, DEVICE,
 )
-from main import compute_returns, NUM_ITERATIONS, NUM_STEPS, GAMMA, LR
+from main import (
+    collect_rollouts, compute_returns,
+    NUM_ITERATIONS, NUM_STEPS, GAMMA, LR,
+)
 
 
 def run_actor_critic(env_id):

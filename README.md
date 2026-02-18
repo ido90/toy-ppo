@@ -2,7 +2,7 @@
 
 A hands-on deep RL exercise — Policy Gradient from REINFORCE to PPO.
 
-The main training pipeline is implemented compactly in `main.py`. Students are expected to read through the code, understand the end-to-end flow, and implement three small core functions.
+The main training pipeline is implemented compactly in `main.py`. Students are expected to read through the code, understand the end-to-end flow, and implement five core functions.
 
 This repo was written by Ido Greenberg for the course [RL-for-Real](https://docs.google.com/document/d/1fmfYp7EH9fqcB7CWWBvrZ40MtCN89Sr_o3o3EG9hWyE), organized by NVIDIA Research in collaboration with Google Research, Mentee Robotics, Tel-Aviv University, Bar-Ilan University, and the Technion.
 
@@ -10,11 +10,13 @@ This repo was written by Ido Greenberg for the course [RL-for-Real](https://docs
 
 | TODO | Function | What it does |
 |------|----------|-------------|
-| 1 | `compute_returns` | Compute future return from each timestep |
-| 2 | `compute_reinforce_loss` | Vanilla policy gradient loss |
-| 3 | `compute_ppo_loss` | PPO's clipped surrogate objective |
+| 1 | `collect_rollout_step` | One step of agent-environment interaction |
+| 2 | `compute_returns` | Discounted future return from each timestep |
+| 3 | `compute_reinforce_loss` | Vanilla policy gradient loss |
+| 4 | `compute_value_loss` | Value function regression loss |
+| 5 | `compute_ppo_loss` | PPO's clipped surrogate objective |
 
-Everything else (networks, rollout collection, training loops, plotting) is provided so you can read and trace the full pipeline.
+Everything else (networks, training loops, plotting) is provided so you can read and trace the full pipeline.
 
 ## Setup
 
@@ -46,7 +48,7 @@ This ensures conda's C++ runtime is used instead of the system's, avoiding `CXXA
 
 **1. Read the code** — review `main.py` and follow the training flow. Note what changes between `run_reinforce()` and `run_ppo()`.
 
-**2. Implement the TODOs** — fill in the three functions listed above.
+**2. Implement the TODOs** — fill in the five functions listed above.
 
 **3. Test** — verify your implementations with the unit tests (no training needed):
 
@@ -79,7 +81,7 @@ If you get stuck, set `USE_SOLUTIONS = True` in `main.py` to import the referenc
 
 ```
 main.py              — exercise file: config, algorithms, training (start here)
-rl_utils.py          — infrastructure: networks, rollout collection, plotting
+rl_utils.py          — infrastructure: networks, environment setup, plotting
 solutions.py         — reference solutions for the TODOs
 tester.py            — unit tests for your implementations
 visualize.py         — render a trained/random agent as a GIF

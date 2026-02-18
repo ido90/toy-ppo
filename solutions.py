@@ -6,6 +6,22 @@ To test: python tester.py
 """
 
 import torch
+import torch.nn.functional as F
+
+
+def collect_rollout_step(obs, env, policy, value_net):
+    """Execute one step of environment interaction."""
+    with torch.no_grad():
+        action, log_prob = policy.get_action(obs)
+        value = value_net(obs) if value_net is not None else torch.tensor(0.0)
+
+    next_obs, reward, terminated, truncated, info = env.step(action.item())
+    done = terminated or truncated
+
+    if done:
+        next_obs, _ = env.reset()
+
+    return action, log_prob, value, reward, done, info, next_obs
 
 
 def compute_returns(rewards, dones, gamma=1.0):
@@ -24,6 +40,12 @@ def compute_returns(rewards, dones, gamma=1.0):
 def compute_reinforce_loss(log_probs, returns):
     """REINFORCE policy gradient loss."""
     return -(log_probs * returns).mean()
+
+
+def compute_value_loss(value_net, obs, returns):
+    """Value function loss (MSE)."""
+    values = value_net(obs)
+    return F.mse_loss(values, returns)
 
 
 def compute_ppo_loss(old_log_probs, new_log_probs, advantages, clip_eps=0.2):
