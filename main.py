@@ -69,7 +69,7 @@ def compute_returns(rewards, dones, gamma=GAMMA):
         returns: tensor of shape (T,) — discounted return G_t for each timestep
     """
     # ──────────────────────────────────────────────────────────────
-    # TODO 1: Implement discounted returns.
+    # TODO 1: Implement discounted returns.  (5-9 lines)
     # ──────────────────────────────────────────────────────────────
     raise NotImplementedError("TODO 1: Implement compute_returns")
 
@@ -117,7 +117,7 @@ def compute_reinforce_loss(log_probs, returns):
         loss: scalar tensor — the policy gradient loss
     """
     # ──────────────────────────────────────────────────────────────
-    # TODO 2: Implement the REINFORCE loss.
+    # TODO 2: Implement the REINFORCE loss.  (1-2 lines)
     # ──────────────────────────────────────────────────────────────
     raise NotImplementedError("TODO 2: Implement compute_reinforce_loss")
 
@@ -138,7 +138,7 @@ def compute_ppo_loss(old_log_probs, new_log_probs, advantages, clip_eps=PPO_CLIP
         loss: scalar tensor — the clipped surrogate loss
     """
     # ──────────────────────────────────────────────────────────────
-    # TODO 3: Implement the PPO clipped surrogate loss.
+    # TODO 3: Implement the PPO clipped surrogate loss.  (3-4 lines)
     # ──────────────────────────────────────────────────────────────
     raise NotImplementedError("TODO 3: Implement compute_ppo_loss")
 

@@ -69,6 +69,10 @@ python visualize.py --agent random   # an untrained agent for reference
 python visualize.py --agent PPO --env CartPole-v1
 ```
 
+Visualize your agent behavior for each task. Does it look like it learned well?
+
+### Reference solutions
+
 If you get stuck, set `USE_SOLUTIONS = True` in `main.py` to import the reference implementations.
 
 ## File structure
@@ -86,8 +90,8 @@ extensions/
 
 ## Environments
 
-- [**CartPole-v1**](https://gymnasium.farama.org/environments/classic_control/cart_pole/) — balance a pole on a cart (easy, fast training)
-- [**LunarLander-v3**](https://gymnasium.farama.org/environments/box2d/lunar_lander/) — land a spacecraft (harder, clearer algorithm differentiation)
+- [**CartPole-v1**](https://gymnasium.farama.org/environments/classic_control/cart_pole/) — balance a pole on a cart (max return is `500`)
+- [**LunarLander-v3**](https://gymnasium.farama.org/environments/box2d/lunar_lander/) — land a spacecraft
 
 ## Optional extension
 
