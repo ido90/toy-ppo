@@ -71,7 +71,11 @@ python visualize.py --agent random   # an untrained agent for reference
 python visualize.py --agent PPO --env CartPole-v1
 ```
 
-Visualize your agent behavior for each task. Does it look like it learned well?
+Visualize your agent behavior for each task. Does it look like the agent learned well?
+
+You may read about the tasks and their reward functions:
+- [**CartPole-v1**](https://gymnasium.farama.org/environments/classic_control/cart_pole/): balance a pole on a cart.
+- [**LunarLander-v3**](https://gymnasium.farama.org/environments/box2d/lunar_lander/): land a spacecraft.
 
 ### Reference solutions
 
@@ -90,15 +94,16 @@ extensions/
   actor_critic.py    — optional: Actor-Critic method
 ```
 
-## Environments
+## Optional extensions
 
-- [**CartPole-v1**](https://gymnasium.farama.org/environments/classic_control/cart_pole/) — balance a pole on a cart (max return is `500`)
-- [**LunarLander-v3**](https://gymnasium.farama.org/environments/box2d/lunar_lander/) — land a spacecraft
-
-## Optional extension
+### Actor-Critic
 
 Run all three methods (REINFORCE, Actor-Critic, PPO) together:
 
 ```bash
 python -m extensions.actor_critic
 ```
+
+### GAE-lambda
+
+Implement `compute_gae()` in `main.py`.
