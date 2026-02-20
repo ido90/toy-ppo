@@ -81,6 +81,18 @@ You may read about the tasks and their reward functions:
 
 If you get stuck, set `USE_SOLUTIONS = True` in `main.py` to import the reference implementations.
 
+## Optional extensions
+
+**6. Beat the defaults** — can you learn faster or reach higher returns? Try tuning hyperparameters (learning rate, gamma, network size) or modifying the training loop.
+
+**7. GAE-lambda** — erase and re-implement `compute_gae()` in `main.py`.
+
+**8. Actor-Critic** — experiment with all three methods (REINFORCE, Actor-Critic, PPO) and compare learning curves:
+
+```bash
+python -m extensions.actor_critic
+```
+
 ## File structure
 
 ```
@@ -93,17 +105,3 @@ environment.yml      — conda environment specification
 extensions/
   actor_critic.py    — optional: Actor-Critic method
 ```
-
-## Optional extensions
-
-### Actor-Critic
-
-Run all three methods (REINFORCE, Actor-Critic, PPO) together:
-
-```bash
-python -m extensions.actor_critic
-```
-
-### GAE-lambda
-
-Implement `compute_gae()` in `main.py`.
