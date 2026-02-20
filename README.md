@@ -8,13 +8,13 @@ This repo was written by Ido Greenberg for the course [RL-for-Real](https://docs
 
 ## What you'll implement
 
-| TODO | Function | What it does |
-|------|----------|-------------|
-| 1 | `collect_rollout_step` | One step of agent-environment interaction |
-| 2 | `compute_returns` | Discounted future return from each timestep |
-| 3 | `compute_reinforce_loss` | Vanilla policy gradient loss |
-| 4 | `compute_value_loss` | Value function regression loss |
-| 5 | `compute_ppo_loss` | PPO's clipped surrogate objective |
+| TODO | Function | What it does | #Lines |
+|------|----------|-------------|-------|
+| 1 | `collect_rollout_step` | One step of agent-environment interaction | 8–10 |
+| 2 | `compute_returns` | Discounted future return from each timestep | 5–9 |
+| 3 | `compute_reinforce_loss` | Vanilla policy gradient loss | 1–2 |
+| 4 | `compute_value_loss` | Value function regression loss | 1–2 |
+| 5 | `compute_ppo_loss` | PPO's clipped surrogate objective | 3–4 |
 
 Everything else (networks, training loops, plotting) is provided so you can read and trace the full pipeline.
 
