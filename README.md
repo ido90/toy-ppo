@@ -83,11 +83,13 @@ If you get stuck, set `USE_SOLUTIONS = True` in `main.py` to import the referenc
 
 ## Optional extensions
 
-**6. Beat the defaults** — can you learn faster or reach higher returns? Try tuning hyperparameters (learning rate, gamma, network size) or modifying the training loop.
+**6. MountainCar** — repeat the experiments for MountainCar-v0 (modify `ENV_IDS` in `main.py`). Does the learning work? Can you guess why? Propose a few possible solutions, then pick one and make it work.
 
-**7. GAE-lambda** — erase and re-implement `compute_gae()` in `main.py`.
+**7. Beat the defaults** — can you learn faster or reach higher returns? Try tuning hyperparameters (learning rate, gamma, network size) or modifying the training loop.
 
-**8. Actor-Critic** — experiment with all three methods (REINFORCE, Actor-Critic, PPO) and compare learning curves:
+**8. GAE-lambda** — erase and re-implement `compute_gae()` in `main.py`.
+
+**9. Actor-Critic** — experiment with all three methods (REINFORCE, Actor-Critic, PPO) and compare learning curves:
 
 ```bash
 python -m extensions.actor_critic
