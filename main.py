@@ -59,11 +59,7 @@ def collect_rollout_step(obs, env, policy, value_net):
 
     This is the core RL data-collection loop body. Unlike supervised learning,
     the agent generates its own training data by acting in the environment.
-
-    The agent interacts with the environment via the Gymnasium (Gym) interface:
-        next_obs, reward, terminated, truncated, info = env.step(action)
-        # the episode ends if time runs out or terminal state is reached:
-        done = terminated or truncated
+    See collect_rollouts() below for the loop that wraps this call.
 
     Args:
         obs:        current observation (as a tensor)
@@ -83,11 +79,24 @@ def collect_rollout_step(obs, env, policy, value_net):
     # ──────────────────────────────────────────────────────────────
     # TODO 1: Collect one environment step.  (8-10 lines)
     #
-    # 1. Use the policy & value networks to sample an action and estimate the state value
-    #     - inside a torch.no_grad() block
-    #     - if no value network is provided, use a zero tensor
+    # INTERFACES:
+    # You will need the following interfaces to complete this function:
+    # 1. Gymnasium (Gym) to interact with the environment:
+    #    - first_observation, info = env.reset()  # reset the environment once an episode is done
+    #    - next_observation, reward, terminated, truncated, info = env.step(action)  # simulate the next env step
+    #    - done = terminated or truncated  # the episode is done if the time runs out or a terminal state is reached
+    #    - For more details: https://gymnasium.farama.org/index.html
+    # 2. The neural networks defined in rl_utils.py:
+    #    - action, log_prob = policy.get_action(observation)  # sample an action from the policy
+    #    - value = value_net(observation)  # estimate value of state
+    #
+    # TASKS:
+    # 1. Within a torch.no_grad() block:
+    #     - Use the policy network to sample an action
+    #     - Use the value network to estimate the state value
+    #       - If the value network is None (e.g. REINFORCE), use a zero tensor
     # 2. Simulate an environment step using the Gymnasium interface
-    # 3. If done: reset the environment and get the next observation
+    # 3. If done: reset the environment
     # 4. Return: action, log_prob, value, reward, done, info, next_obs
     # ──────────────────────────────────────────────────────────────
     raise NotImplementedError("TODO 1: Implement collect_rollout_step")
