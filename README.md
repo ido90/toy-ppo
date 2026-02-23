@@ -18,6 +18,10 @@ This repo was written by Ido Greenberg for the course [RL-for-Real](https://docs
 
 Everything else (networks, training loops, plotting) is provided so you can read and trace the full pipeline.
 
+| CartPole-v1 | LunarLander-v3 |
+|:-----------:|:--------------:|
+| ![CartPole](gifs/CartPole.gif) | ![LunarLander](gifs/LunarLander.gif) |
+
 ## Setup
 
 ### 1. Install Miniconda (if needed)
@@ -71,7 +75,9 @@ python visualize.py --agent random   # an untrained agent for reference
 python visualize.py --agent PPO --env CartPole-v1
 ```
 
-Visualize your agent behavior for each task. Does it look like the agent learned well?
+Visualize your agent behavior for each task.
+Does it look like the agent learned well?
+Can you train the agent better than the GIFs displayed in this README file?
 
 You may read about the tasks and their reward functions:
 - [**CartPole-v1**](https://gymnasium.farama.org/environments/classic_control/cart_pole/): balance a pole on a cart.
