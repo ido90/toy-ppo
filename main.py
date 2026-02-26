@@ -108,7 +108,8 @@ def collect_rollouts(env, policy, value_net=None, num_steps=2048):
     A single rollout typically spans multiple episodes: when an episode ends
     (done=True), the environment resets and collection continues. The rollout
     may also end mid-episode; in that case, we return `last_value` as an estimte
-    for the rewards that would be collected if the episode continued.
+    for the remaining return (i.e., sum of rewards that would have been collected
+    if the episode continued).
     """
     obs_list, act_list, logp_list, rew_list, done_list, val_list = [], [], [], [], [], []
     ep_returns = []
