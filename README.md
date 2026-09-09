@@ -31,6 +31,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b
 ~/miniconda3/bin/conda init bash
 source ~/.bashrc
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main --channel https://repo.anaconda.com/pkgs/r
 ```
 
 ### 2. Create Environment
