@@ -1,6 +1,6 @@
 # Toy PPO
 
-A hands-on deep RL exercise — Policy Gradient from REINFORCE to PPO.
+A hands-on deep RL exercise - Policy Gradient from REINFORCE to PPO.
 
 The main training pipeline is implemented compactly in `main.py`. Students are expected to read through the code, understand the end-to-end flow, and implement five core functions.
 
